@@ -3,12 +3,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-// Creación del objeto Scanner para leer desde la consola
+
         Scanner teclado = new Scanner(System.in);
-// Creación de la lista para guardar nuestros productos
-        ArrayList<Producto> inventario = new ArrayList<>();
-
-
+        
         Producto producto1 = new Producto();
         producto1.codigo = "P-001";
         producto1.nombre = "Teclado mecánico";
@@ -27,7 +24,7 @@ public class Main {
 
         int opcion = 0;
 
-        // 2. Bucle do-while principal
+        //menu
         do {
             System.out.println("\n========== MENU PRINCIPAL ==========");
             System.out.println("1. Ver stock de un producto");
@@ -72,7 +69,7 @@ public class Main {
                     break;
 
                 case 3:
-                    // Ver precio
+                    //precio
                     Producto prodPrecio = buscarProducto(teclado, producto1, producto2, producto3);
                     if (prodPrecio != null) {
                         System.out.println("Precio de " + prodPrecio.nombre + ": $" + prodPrecio.precio);
@@ -82,7 +79,7 @@ public class Main {
                     break;
 
                 case 4:
-                    // Mostrar ficha
+                    // ficha
                     Producto prodFicha = buscarProducto(teclado, producto1, producto2, producto3);
                     if (prodFicha != null) {
                         prodFicha.mostrarFicha();
@@ -105,7 +102,7 @@ public class Main {
         teclado.close();
     }
 
-    // MÉTODOS DE BÚSQUEDA: pregunta si por Código o por Nombre
+    // pregunta si por Código o por Nombre para realizar la busqueda
     public static Producto buscarProducto(Scanner teclado, Producto producto1, Producto producto2, Producto producto3) {
         System.out.println("\n¿Como desea buscar el producto?");
         System.out.println("1. Por codigo");
@@ -134,6 +131,6 @@ public class Main {
             System.out.println("Opcion de busqueda invalida.");
         }
 
-        return null; // Si no lo encontró o la opción fue errónea
+        return null; // Si no lo encontró 
     }
 }
